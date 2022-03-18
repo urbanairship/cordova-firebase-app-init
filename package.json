@@ -1,0 +1,21 @@
+{
+  "name": "airship-firebase-app-init",
+  "version": "1.0.0",
+  "description": "Cordova Firebase app init",
+  "cordova": {
+    "id": "airship-firebase-app-setup",
+    "platforms": [
+      "android"
+    ]
+  },
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=10.0.0"
+    },
+    {
+      "name": "cordova-plugman",
+      "version": ">=4.2.0"
+    }
+  ],
+}

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="airship-firebae-app-init"
+        version="14.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>firebase-app-setup</name>
+    <description>Firebase app setup</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova</keywords>
+
+    <engines>
+        <engine name="cordova-android" version=">=10.0.0"/>
+        <engine name="cordova" version=">=9.0.1"/>
+    </engines>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <provider
+                android:name="androidx.startup.InitializationProvider"
+                android:authorities="${applicationId}.androidx-startup"
+                android:exported="false"
+                tools:node="merge">
+                <meta-data android:name="com.airship.cordova.FirebaseAppInit"
+                    android:value="androidx.startup" />
+            </provider>
+
+            <framework
+                custom="true"
+                src="src/android/build-extras.gradle"
+                type="gradleReference"/>
+        </config-file>
+
+    </platform>
+
+    <source-file
+        src="src/android/FirebaseAppSetup.java"
+        target-dir="src/com/airhsip/cordova"/>
+
+</plugin>
