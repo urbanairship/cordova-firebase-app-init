@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="airship-firebae-app-init"
+<plugin id="cordova-firebase-app-init"
         version="14.0.0"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <name>cordova-firebae-app-init</name>
+    <name>cordova-firebase-app-init</name>
     <description>Firebase app setup</description>
     <license>Apache 2.0</license>
     <keywords>cordova</keywords>
