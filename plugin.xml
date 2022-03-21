@@ -4,7 +4,7 @@
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <name>firebase-app-setup</name>
+    <name>cordova-firebae-app-init</name>
     <description>Firebase app setup</description>
     <license>Apache 2.0</license>
     <keywords>cordova</keywords>
@@ -16,6 +16,8 @@
 
     <!-- android -->
     <platform name="android">
+    
+        <hook type="after_prepare" src="hooks/add_tools_namespace.js" />
 
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <provider
@@ -26,17 +28,19 @@
                 <meta-data android:name="com.airship.cordova.FirebaseAppInit"
                     android:value="androidx.startup" />
             </provider>
-
-            <framework
-                custom="true"
-                src="src/android/build-extras.gradle"
-                type="gradleReference"/>
         </config-file>
+
+        <framework
+            custom="true"
+            src="src/android/build-extras.gradle"
+            type="gradleReference"/>
+
+        <source-file
+            src="src/android/FirebaseAppInit.java"
+            target-dir="src/com/airship/cordova"/>
 
     </platform>
 
-    <source-file
-        src="src/android/FirebaseAppSetup.java"
-        target-dir="src/com/airhsip/cordova"/>
+    
 
 </plugin>
